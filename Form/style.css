@@ -34,3 +34,15 @@ form{
 	border: none;
 	padding: 2%
 }
+header{
+	background-color: #2196F3;
+	color: white;
+	text-align: center;
+	margin-bottom: 2%;
+}
+section{
+	margin: auto;
+	width: 33.333333%;
+	background-color: #E0E0E0;
+	padding: 2%;
+}
