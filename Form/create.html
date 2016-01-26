@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create an account</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="marg">
+		<div class="row1 header">
+			<div class="center">
+				<h1>Create an account</h1>
+			</div>
+		</div>
+		<div class="formContainer">
+			<form>
+				<h4>Name</h4>
+				<input type="text" name="firstname" value="First">
+				<input type="text" name="lastname" value="Last"><br>
+				<input type="text" name="username" value="User Name"><br>
+				<h4>Password</h4>
+				<input type="password" name="createpass" value="Create Password">
+				<input type="password" name="confirmpass" value="Confirm Password"><br>
+				<h4>Birthday</h4>
+				<input type="date" name="bday">
+				<h4>Gender</h4>
+				<input list="gender" name="gender" value="Gender"></input><br>
+				<br>
+				<input type="submit" value="Create" class="button">
+			</form>
+		</div>
+	</div>
+</body>
+</html>
+<datalist id="gender">
+	<option value="Male">
+		<option value="Female">
+			<option value="Other">
+			</datalist>

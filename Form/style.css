@@ -1,0 +1,36 @@
+.row1{
+	width: 100%;
+}
+.center{
+	display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.row{
+	display: inline-flex;
+}
+.header{
+	background-color: #2196F3;
+	width: 100%;
+	color: white;
+	text-align: center;
+	margin-bottom: 2%
+}
+.formContainer{
+	margin: auto;
+	width: 33.333333%;
+	background-color: #E0E0E0;
+	padding: 2%;
+}
+form{
+	margin-top: 0%;
+}
+.marg{
+	margin: auto;
+}
+.button{
+	background: #2196F3;
+	color: white;
+	border: none;
+	padding: 2%
+}

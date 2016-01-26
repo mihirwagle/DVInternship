@@ -1,0 +1,60 @@
+.container{
+	width:100%;
+	height: 100%;
+}
+div{
+	display:;
+	width:100%;
+	height: 100%;
+	float: left;
+	clear: right;
+}
+.num{
+	width: 75%;
+	height: 100%;
+	background-color: #607D8B;
+}
+.oper{
+	width: 25%;
+	height: 100%;
+	background-color: #0097A7;
+}
+.sp{
+	width: 100%;
+	background-color: #2962FF;
+}
+.col-3{
+	width: 33.33%;
+	height: 100%;
+}
+.row{
+	display: inline-flex;
+}
+h1 {
+    color: white;
+    text-align: center;
+    width: 100%
+    height:100%;
+}
+h1:hover{
+	background-color: #FFFF8D;
+	color: black;
+}
+.trans{
+	background-color: #607D8B;
+	color: #607D8B;
+}
+.trans:hover{
+	background-color: #607D8B;
+	color: #607D8B;
+}
+.string{
+	width: 100%;
+	height: 100%;
+	text-align:right;
+	color: gray;
+	background-color: #CFD8DC;
+}
+body{
+	/*background-color: #0097A7;
+}
