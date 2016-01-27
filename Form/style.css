@@ -19,6 +19,7 @@
 .formContainer{
 	margin: auto;
 	width: 33.333333%;
+	min-width: 400px;
 	background-color: #E0E0E0;
 	padding: 2%;
 }
@@ -43,6 +44,17 @@ header{
 section{
 	margin: auto;
 	width: 33.333333%;
+	min-width: 400px;
 	background-color: #E0E0E0;
 	padding: 2%;
+}
+form input{
+	height: 10%;
+	margin: 1%;
+	width: 40%;
+}
+form h4{
+	height: 10%;
+	margin: 1%;
+	width: 100%;
 }
