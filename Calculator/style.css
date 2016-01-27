@@ -57,6 +57,10 @@ h1:hover{
 	background-color: #CFD8DC;
 	margin:0%;
 }
+.string:hover{
+	color: gray;
+	background-color: #CFD8DC;
+}
 body{
-	/*background-color: #0097A7;
+	background-color:;
 }
