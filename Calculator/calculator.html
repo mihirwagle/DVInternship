@@ -3,34 +3,35 @@
 <head>
 	<title>Calculator</title>
 	<link rel="stylesheet" type="text/css" href="style.css">
+	
 </head>
-<body>
+<body >
 	<div class="container" id="base">
 		<div class="row">
-			<h1 class="string">Calculator</h1>
+			<input type="text" name="window" id="mWindow" value=""/>
 		</div>
 		<div class="container" id="input">
 			<div>
 				<div class="num" id="num">
 					<div class="row">
-						<div class="col-3"><h1>7</h1></div>
-						<div class="col-3"><h1>8</h1></div>
-						<div class="col-3"><h1>9</h1></div>
+						<div class="col-3"><h1 name="7" id="7" onclick="typeNumber(7)">7</h1></div>
+						<div class="col-3"><h1 name="8" id="8" onclick="typeNumber(8)">8</h1></div>
+						<div class="col-3"><h1 name="9" id="9" onclick="typeNumber(9)">9</h1></div>
 					</div>
 					<div class="row">
-						<div class="col-3"><h1>4</h1></div>
-						<div class="col-3"><h1>5</h1></div>
-						<div class="col-3"><h1>6</h1></div>
+						<div class="col-3"><h1 name="4" id="4" onclick="typeNumber(4)">4</h1></div>
+						<div class="col-3"><h1 name="5" id="5" onclick="typeNumber(5)">5</h1></div>
+						<div class="col-3"><h1 name="6" id="6" onclick="typeNumber(6)">6</h1></div>
 					</div>
 					<div class="row">
-						<div class="col-3"><h1>1</h1></div>
-						<div class="col-3"><h1>2</h1></div>
-						<div class="col-3"><h1>3</h1></div>
+						<div class="col-3"><h1 name="1" id="1" onclick="typeNumber(1)">1</h1></div>
+						<div class="col-3"><h1 name="2" id="2" onclick="typeNumber(2)">2</h1></div>
+						<div class="col-3"><h1 name="3" id="3" onclick="typeNumber(3)">3</h1></div>
 					</div>
 					<div class="row">
-						<div class="col-3"><h1>.</h1></div>
-						<div class="col-3"><h1>0</h1></div>
-						<div class="col-3"><h1>=</h1></div>
+						<div class="col-3"><h1 name="." id="." onclick="typeNumber('.')">.</h1></div>
+						<div class="col-3"><h1 name="0"id="0" onclick="typeNumber(0)">0</h1></div>
+						<div class="col-3"><h1 name="="id="=" onclick="calc()">=</h1></div>
 					</div>
 					<div class="row">
 						<div class="col-3 "><h1 class="trans">TEST</h1></div>
@@ -39,26 +40,133 @@
 					</div>
 				</div>
 				<div class="oper" id="oper">
-					<div><h1>C</h1></div>
-					<div><h1>/</h1></div>
-					<div><h1>*</h1></div>
-					<div><h1>-</h1></div>
-					<div><h1>+</h1></div>
+					<div><h1 id="C" onclick="C()">C</h1></div>
+					<div><h1 name="/"id="/" onclick="operate('/')">/</h1></div>
+					<div><h1 name="*"id="*" onclick="operate('*')">*</h1></div>
+					<div><h1 name="-"id="-" onclick="operate('-')">-</h1></div>
+					<div><h1 name="+"id="+" onclick="operate('+')">+</h1></div>
 				</div>
 			</div>
 			<div class="sp">
 				<div class="row">
-					<div class="col-3"><h1>SIN</h1></div>
-					<div class="col-3"><h1>COS</h1></div>
-					<div class="col-3"><h1>TAN</h1></div>
+					<div class="col-3"><h1 name="sin"id="sin" onclick="sine()">SIN</h1></div>
+					<div class="col-3"><h1  name="cos"id="cos" onclick="cos()">COS</h1></div>
+					<div class="col-3"><h1  name="tan"id="tan" onclick="tangent()">TAN</h1></div>
 				</div>
 				<div class="row">
-					<div class="col-3"><h1>LOG</h1></div>
-					<div class="col-3"><h1>LN</h1></div>
-					<div class="col-3"><h1>SQRT</h1></div>
+					<div class="col-3"><h1 name="log" id="log" onclick="Log10()">LOG</h1></div>
+					<div class="col-3"><h1 name="ln"id="ln" onclick="ln()">LN</h1></div>
+					<div class="col-3"><h1 name="sqRoot"id="sqRoot" onclick="sqRoot()">SQRT</h1></div>
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
 </html>
+<script >
+  var num1="", num2="", operator="",mWindow=document.getElementById("mWindow");
+function typeNumber(n){
+  var num = mWindow.value;
+  if(num == "0"&& n != "."){
+    var str=n;
+  } else if(n=="."&&(num==""||num=="0")){
+    var str="0.";
+  } else if(n=="." &&(num.search(/[.]/)>-1)){
+    var str=num;
+  } else{ 
+    var str=num.concat(n); 
+  }               
+  mWindow.value=str;
+}
+function C(){         
+  mWindow.value="";
+}
+function operate(op){
+  if(mWindow.value==""||isNaN(mWindow.value)){}
+    else{
+      num1=mWindow.value;
+      operator=op;
+      mWindow.value=mWindow.value.concat(op);
+    }
+  }
+function calc(){
+
+    if(num1!=""){
+     var x=mWindow.value;
+     num2=x.substring(((num1.length)+1));}
+     if(num1!=""&&num2!=""){
+      var res;
+      switch(operator){
+        case "+": 
+        res=Number(num1)+Number(num2);
+        break;
+        case "-": 
+        res=Number(num1)-Number(num2);
+        break;
+        case "*": 
+        res=Number(num1)*Number(num2);
+        break;
+
+        case "/": 
+        if(num2==0){
+         res= Infinity;}
+         else{
+           res=Number(num1)/Number(num2);
+         }
+         break;
+
+       }
+       mWindow.value=res;
+       num1="";
+       num2="";
+     }
+}
+function sine(){
+    if(mWindow.value==""||isNaN(mWindow.value)){}
+      else{
+        var x=((mWindow.value)*Math.PI)/(180);
+        mWindow.value=Math.sin(x);
+      }
+}
+function cosine(){
+      if(mWindow.value==""||isNaN(mWindow.value)){}
+        else{
+          var x=((mWindow.value)*Math.PI)/(180);
+          mWindow.value=Math.cos(x);
+        }
+}
+function tangent(){
+        if(mWindow.value==""||isNaN(mWindow.value)){}
+          else{
+            if(mWindow.value=="90"){
+             mWindow.value=Infinity; 
+           }  
+           else{
+             var x=((mWindow.value)*Math.PI)/(180);
+             mWindow.value=Math.tan(x);
+           }
+         }
+}
+function Log10(){
+        if(mWindow.value==""||isNaN(mWindow.value)){}
+          else{
+           var x = mWindow.value;
+           var res = (Math.log(x))/2.303;
+           mWindow.value = res;
+         }
+}
+function ln(){
+        if(mWindow.value==""||isNaN(mWindow.value)){}
+          else{
+           var x=mWindow.value;
+           mWindow.value=Math.log(x);
+         }      
+}
+function sqRoot(){
+        if(mWindow.value==""||isNaN(mWindow.value)){}
+          else{
+           var x=mWindow.value;
+           mWindow.value=Math.sqrt(x);
+         }
+}
+</script>
