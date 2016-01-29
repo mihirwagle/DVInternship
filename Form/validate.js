@@ -25,9 +25,8 @@ function validateForm() {
         alert("Birth Date must be entered");
         return false;
     }
-    else if (g == null || g != "Male"||g != "Female"||g != "Other") {
+    else if (g == null || !(g == "Male"||g == "Female"||g == "Other")) {
         alert("Please enter Male,Female or Other for Gender");
         return false;
     }
-    return true;
 }
