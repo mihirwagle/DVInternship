@@ -86,7 +86,7 @@ function Log10(){
         if(mWindow.value==""||isNaN(mWindow.value)){}
           else{
            var x = mWindow.value;
-           var res = (Math.log(x))/2.303;
+           var res = (Math.log(x))/(Math.log(10));
            mWindow.value = res;
          }
 }
