@@ -53,7 +53,6 @@ function calc(){
        mWindow.value=res;
        num1="";
        num2="";
-       alert(res);
      }
 }
 function sine(){
